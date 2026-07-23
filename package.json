@@ -1,0 +1,13 @@
+{
+  "name": "ghostlyen",
+  "version": "1.0.0",
+  "description": "A platform for sharing horror stories",
+  "license": "ISC",
+  "author": "Agatsya Mishra",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "start",
+    "start": "node server.js"
+  }
+}

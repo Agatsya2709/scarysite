@@ -6,13 +6,20 @@ const port = 8000;
 const server = http.createServer(async (req, res) => {
     const __dirname = path.dirname(new URL(import.meta.url).pathname);
     const absolutepath= path.join(__dirname,'index.html')
-    const htmlContent =  await fs.readFile(absolutepath, 'utf8');
+   
+    try{
+      const content = await fs.readFile(absolutepath, 'utf8');
+    }catch(errr){
+      console.log(errr)
+    }
+
     console.log(absolutepath)
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');
   // res.writeHead(200, { 'Content-Type': 'text/html' });
   res.end(htmlContent);
 });
+
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 })

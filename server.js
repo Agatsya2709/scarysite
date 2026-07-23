@@ -1,12 +1,12 @@
 import http from 'http';
 import path from 'node:path';
-import fs from 'fs';
+import fs from 'fs/promises';
 const port = 8000;
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
     const __dirname = path.dirname(new URL(import.meta.url).pathname);
     const absolutepath= path.join(__dirname,'index.html')
-    const htmlContent = fs.readFileSync(absolutepath, 'utf8');
+    const htmlContent =  await fs.readFile(absolutepath, 'utf8');
     console.log(absolutepath)
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/html');

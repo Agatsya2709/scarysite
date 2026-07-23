@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="sightings.html">Sightings</a>
+            <a href="upload.html">Upload</a>
+        </nav>
+        <div class="upload-form">
+            <form action="submit_sighting.php" method="post" enctype="multipart/form-data">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required><br><br>
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required><br><br>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea><br><br>
+
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*"><br><br>
+
+                <input type="submit" value="Submit Sighting">
+            </form>
+        <h1>UPLOAD YOUR SIGHTING</h1>
+
+    </body>
